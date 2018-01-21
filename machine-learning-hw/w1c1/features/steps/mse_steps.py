@@ -22,4 +22,4 @@ def step_impl(ctx):
 @then('we expect the mse to be {expected}')
 def step_impl(ctx, expected):
     msg = f"expected: {expected}, got {ctx.result}"
-    assert ctx.result is float(expected), msg
+    assert ctx.result == float(expected), msg
