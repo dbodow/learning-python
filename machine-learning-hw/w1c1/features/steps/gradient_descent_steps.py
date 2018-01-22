@@ -37,7 +37,7 @@ def step_impl(ctx):
     assert ctx.overflow is False, msg
 
 # Simple reference: https://onlinecourses.science.psu.edu/stat414/node/280
-# Main idea: A ~ N(alpha, variance / n)
+# Main idea: A ~ N(alpha, variance / n) in OLS
 @then('observed A should be within a {tolerance} CI for A')
 def step_impl(ctx, tolerance):
     # Set critical value
@@ -53,7 +53,7 @@ def step_impl(ctx, tolerance):
         got A is {ctx.A_obs}'
     assert A_min < ctx.A_obs < A_max, msg
 
-# Main idea: B ~ N(beta, variance / SSE)
+# Main idea: B ~ N(beta, variance / SSE) in OLS
 @then('observed B should be within a {tolerance} CI for B')
 def step_impl(ctx, tolerance):
     # Set critical value, SSE
