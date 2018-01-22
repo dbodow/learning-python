@@ -12,9 +12,7 @@ def step_impl(ctx, dev, n):
 
 @when('the noisy dataset is generated')
 def step_impl(ctx):
-    ctx.result = _.noisy_2d_dataset(\
-        ctx.slope,\
-        ctx.intercept,\
+    ctx.result = _.noisy_2d_dataset(ctx.true_model,\
         ctx.stddev,\
         ctx.num_points)
 
